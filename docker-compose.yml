@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  emporium-backend:
+    # path to backend Dockerfile
+    build: ./back/core
+    # Might be redundant
+    # command: python ./manage.py runserver 0.0.0.0:8000
+    volumes:
+      # Bind Mount :) https://docs.docker.com/storage/bind-mounts/
+      - type: bind
+        source: ./back/core
+        target: /opt/app/staticvolumes
+    ports:
+      - '8000:8000'
+    env_file:
+      - ./dev.env
+    # depends_on:
+    #   - emporium-database

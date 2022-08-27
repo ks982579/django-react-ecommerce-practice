@@ -27,5 +27,5 @@ CMD [ "python", "./manage.py", "runserver", "0.0.0.0:8000" ]
 # core/manage.py
 
 # docker build --help
-# docker build -t django-core:1.1
+# docker build -t django-core:1.1 .
 # docker run --name django-backend --rm -d -p 8000:8000 django-core:1.1
